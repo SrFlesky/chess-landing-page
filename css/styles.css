@@ -619,8 +619,8 @@ html, body {
     border: 2px solid var(--principal);
     border-radius: 10px;
     transition: all 0.1s ease;
-    display: inline-block !important;  /* Cambia a inline-block */
-    margin: 0 auto !important;  /* Centrado en caso de emergencia */
+    display: inline-block !important; 
+    margin: 0 auto !important; 
 }
 
 .diamond .pricing-btn {
