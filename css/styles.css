@@ -421,16 +421,90 @@ html, body {
     opacity: 0.8;
 }
 
+.stats-section {
+    background-image: url('../assets/stats-img.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    width: 100%;
+    position: relative;
+}
+
+.stats-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 80px 20px;
+    width: 100%;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+}
+
+.stat-number {
+    color: white;
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.stat-label {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 /* Media query para tablets */
 @media (max-width: 768px) {
     .feature-box {
-        flex: 0 1 calc(50% - 15px);  /* 2 boxes por fila */
+        flex: 0 1 calc(50% - 15px); 
+    }
+
+    .stat-number {
+        font-size: 3rem;
+    }
+    
+    .stat-label {
+        font-size: 1rem;
+    }
+    
+    .stat-item {
+        flex: 0 1 160px;
+        padding: 20px 15px;
     }
 }
 
 /* Media query para móviles */
 @media (max-width: 480px) {
     .feature-box {
-        flex: 0 1 100%;  /* 1 box por fila */
+        flex: 0 1 100%;  
+    }
+    .stats-container {
+        gap: 20px;
+    }
+    
+    .stat-item {
+        flex: 0 1 calc(50% - 20px);
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
     }
 }
