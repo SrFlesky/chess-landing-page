@@ -19,7 +19,8 @@ html, body {
     --primary:  #ffffff;
     --primary-hover: #b3b3b3;
     --secondary: #3498db;
-    --background-black: rgba(26, 26, 26, 0.95);
+    --background-black: #020a0f;
+    --background-grey: #00101b;
 }
 
 /* Header */
@@ -342,3 +343,94 @@ html, body {
     padding: 0px 0;
     border-bottom: 2px solid var(--secondary);
     white-space: nowrap;  
+}
+
+/* Features Section */
+.features-section {
+    background-color: var(--background-grey);
+    padding: 60px 20px;
+    width: 100%;
+}
+
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-box {
+    background-color: var(--background-black);
+    padding: 30px 25px;
+    border-radius: 8px;
+    flex: 0 1 calc(33.333% - 20px);  /* 3 boxes por fila */
+    min-width: 280px;  /* Ancho mínimo para móviles */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* Alinea contenido a la izquierda */
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.feature-title {
+    color: white;
+    font-size: 1.3rem;  /* Similar al tamaño usado antes */
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    text-align: left;
+}
+
+.feature-description {
+    color: #cccccc;  /* Gris claro */
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    text-align: left;
+    flex-grow: 1;  /* Para que el botón siempre quede abajo */
+}
+
+.feature-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--secondary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 5px 0;
+    position: relative;
+    border-bottom: 2px solid var(--secondary);
+    transition: opacity 0.3s ease;
+    align-self: flex-start;  /* Alinea a la izquierda */
+}
+
+.feature-btn:hover {
+    opacity: 0.8;
+}
+
+/* Media query para tablets */
+@media (max-width: 768px) {
+    .feature-box {
+        flex: 0 1 calc(50% - 15px);  /* 2 boxes por fila */
+    }
+}
+
+/* Media query para móviles */
+@media (max-width: 480px) {
+    .feature-box {
+        flex: 0 1 100%;  /* 1 box por fila */
+    }
+}
