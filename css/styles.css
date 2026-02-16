@@ -10,7 +10,7 @@ section {
 
 :root {
     --primary:  #ffffff;
-    --primary-hover: #858585;
+    --primary-hover: #b3b3b3;
     --secondary: #3498db;
 }
 
@@ -23,7 +23,6 @@ section {
     background: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    border-bottom: 3px solid var(--secondary);
 }
 
 /* Contenedor del menú */
@@ -78,6 +77,17 @@ section {
     transition: width 0.3s;
 }
 
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--secondary);
+    transition: width 0.3s;
+}
+
 .menu-container nav a:hover::after {
     width: 100%; 
 }
@@ -98,7 +108,7 @@ section {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch; /* Para scroll suave en iOS */
   scroll-behavior: smooth;
-  height: 500px; /* Ajusta según necesites */
+  height: auto;
 }
 
 .slide {
@@ -132,6 +142,10 @@ section {
     height: max-content;
 }
 
+.slides-container {
+    border-left: 5px solid var(--primary);  
+}
+
 /* Para el contenedor del texto */
 .banner-info-bg {
     font-family: 'Playfair Display', 'Times New Roman', serif;
@@ -139,15 +153,14 @@ section {
     backdrop-filter: blur(5px); */
     padding: 40px 50px;
     border-radius: 0px;
-    border-left: 5px solid var(--primary);   /* Detalle elegante */
     max-width: 700px;
 }
 
 /* Título principal */
 .banner-info-bg h4 {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif
-    font-size:4rem;
-    margin-bottom: 50px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
     color: #fff;
     font-style:italic;
     letter-spacing:1px;
@@ -158,9 +171,10 @@ section {
     font-family: 'Playfair Display', 'Times New Roman', serif;
     font-size: 3.5rem;
     font-weight: 600;
-    color: var(--primary);  /* Dorado */
-    text-transform: uppercase;
+    color: var(--primary);
+    text-transform: capitalize;
     letter-spacing: 3px;
+    margin-block-start: 0;
     margin-bottom: 15px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
@@ -169,7 +183,8 @@ section {
 .banner-info-bg p {
     font-size: 1.3rem;
     color: rgba(255,255,255,0.9);
-    margin-bottom: 30px;
+    margin-top: 5px;
+    margin-bottom: 15px;
     line-height: 1.6;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
@@ -193,7 +208,7 @@ section {
 
 .banner-info-bg .btn:first-child {
     background: var(--primary);
-    color: #4b4b4b;
+    color: var(--secondary);
 }
 
 .banner-info-bg .btn:last-child {
@@ -209,8 +224,43 @@ section {
 
 .banner-info-bg .btn:first-child:hover {
     background: var(--primary-hover);
+    color:#1e82a0
 }
 
 .banner-info-bg .btn:last-child:hover {
     background: rgba(255, 255, 255, 0.221);
+}
+
+.slider-buttons-container {
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Alinea verticalmente */
+    gap: 10px;                /* Espacio entre botones */
+    width: 100%;              /* O el ancho que necesites */
+    margin: 10px 0;
+}
+
+.slider-btn {
+    display: inline-flex; 
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+    position: relative;
+}
+
+.slider-btn:hover {
+    color: var(--secondary);
+}
+
+.slider-btn:focus {
+    outline: none;
 }
