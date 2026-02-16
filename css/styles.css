@@ -6,12 +6,20 @@ section {
   display: block;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 /* Colores */
 
 :root {
     --primary:  #ffffff;
     --primary-hover: #b3b3b3;
     --secondary: #3498db;
+    --background-black: rgba(26, 26, 26, 0.95);
 }
 
 /* Header */
@@ -20,7 +28,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(26, 26, 26, 0.95);
+    background: var(--background-black);
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
@@ -99,20 +107,20 @@ section {
 /* SLIDERRRR */
 
 .slider-wrapper {
-    margin-top: 80px;
+    margin-top: 70px;
 }
 
 .slides-container {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch; /* Para scroll suave en iOS */
+  -webkit-overflow-scrolling: touch; 
   scroll-behavior: smooth;
   height: auto;
 }
 
 .slide {
-  flex: 0 0 100%; /* Cada slide ocupa el 100% del ancho */
+  flex: 0 0 100%;
   scroll-snap-align: start;
   background-size: auto 100%; 
   /* Aquí van tus estilos de fondo, etc */
@@ -123,8 +131,8 @@ section {
   display: none;
 }
 .slides-container {
-  -ms-overflow-style: none;  /* IE y Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
 
 .slide-1 {
@@ -143,7 +151,7 @@ section {
 }
 
 .slides-container {
-    border-left: 5px solid var(--primary);  
+    border-left: 0px solid var(--primary);  
 }
 
 /* Para el contenedor del texto */
@@ -233,10 +241,10 @@ section {
 
 .slider-buttons-container {
     display: flex;
-    justify-content: center;  /* Centra horizontalmente */
-    align-items: center;      /* Alinea verticalmente */
-    gap: 10px;                /* Espacio entre botones */
-    width: 100%;              /* O el ancho que necesites */
+    justify-content: center;  
+    align-items: center;     
+    gap: 10px;               
+    width: 100%;             
     margin: 10px 0;
 }
 
@@ -264,3 +272,73 @@ section {
 .slider-btn:focus {
     outline: none;
 }
+
+.about-us-index {
+    background-color: var(--background-black);
+    padding: 60px 20px;  
+    text-align: center;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;           
+}
+
+.about-us-index-title p {
+    color: var(--secondary);
+    font-size: 1rem;      
+    text-transform: uppercase;
+    letter-spacing: 1px;  
+    margin: 0;           
+    font-weight: 500;   
+}
+
+.about-us-index-main-words p {
+    color: white;
+    font-size: 2.5rem;    
+    font-weight: bold;    
+    line-height: 1.2;     
+    max-width: 800px;     
+}
+
+.about-us-index-content em {
+    color: #cccccc;       
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;     
+    font-style: italic;  
+    line-height: 1.5;    
+    display: block;        
+    max-width: 700px;     
+    margin: 0 auto;        
+}
+
+.about-us-index {
+    --nav-text-size: 1rem; 
+}
+
+.about-us-index-title p {
+    font-size: var(--nav-text-size);
+}
+
+.about-us-index-main-words p {
+    font-size: calc(var(--nav-text-size) * 2.5);
+}
+
+.about-us-index-content em {
+    font-size: calc(var(--nav-text-size) * 0.9);
+}
+
+.read-more {
+    display: inline-block;  
+    width: auto;
+}
+
+.read-more .btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #fff;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    padding: 0px 0;
+    border-bottom: 2px solid var(--secondary);
+    white-space: nowrap;  
